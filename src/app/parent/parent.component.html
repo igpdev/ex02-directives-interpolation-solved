@@ -1,4 +1,13 @@
-<p *ngIf="serviceCalled; else elseBlock">
-  Service called successfully: we got {{ users.length }} users.
-</p>
-<ng-template #elseBlock> Service has not been called yet. </ng-template>
+<p>Display the users info</p>
+<!--
+  Inside the ol element, use the correct angular directive to 
+  iterate over the users array and display the following 3 properties separated by comma:
+
+  - first_name
+  - last_name
+  - email
+-->
+
+<ol *ngFor="let user of users">
+  <li>{{ user.first_name }}, {{ user.last_name }}, {{ user.email }}</li>
+</ol>
